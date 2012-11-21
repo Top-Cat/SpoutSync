@@ -37,12 +37,13 @@ class build {
 	}
 	
 	private function sync($force = 0) {
+		global $perms;
 		if ($this->result == "FAILURE") {
 			@rmdir($this->getDir());
 			return;
 		}
 		
-		if (!file_exists($this->getDir())) { mkdir($this->getDir(), 0770); }
+		if (!file_exists($this->getDir())) { mkdir($this->getDir(), $perms); }
 	
 		foreach ($this->artifacts as $artifact) {
 			new artifact($this, $artifact, $force);

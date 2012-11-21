@@ -43,6 +43,7 @@ class artifact {
 	}
 	
 	private function sync() {
+		global $perms;
 		if (!file_exists($this->getDir()) || $this->getCachedMD5() != $this->getMD5() || $force) {
 			$data = get_text($this->build->getUrl() . "artifact/" . $this->relativePath);
 			$fh = fopen($this->getDir(), 'w');
@@ -51,7 +52,7 @@ class artifact {
 
 			$this->saveMD5();
 		
-			chmod($this->getDir(), 0770);
+			chmod($this->getDir(), $perms);
 			touch($this->build->getDir(), $this->build->getTimestamp() / 1000);
 			touch($this->getDir(), $this->build->getTimestamp() / 1000);
 		}

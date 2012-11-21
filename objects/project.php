@@ -22,8 +22,10 @@ class project {
 	}
 
 	private function sync() {
+		global $perms;
+		
 		// Ensure directory exists
-		if (!file_exists($this->getDir())) { mkdir($this->getDir(), 0770); }
+		if (!file_exists($this->getDir())) { mkdir($this->getDir(), $perms); }
 		
 		// Find existing synced files
 		if ($dh = opendir($this->getDir())) {

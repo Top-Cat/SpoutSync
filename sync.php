@@ -4,6 +4,7 @@ include "objects/artifact.php";
 include "objects/build.php";
 include "objects/project.php";
 $workingDir = "/media/raid/web/thomasc.co.uk/mirror/";
+$perms = 0770;
 
 function get_text($filename) {
 	$ch = curl_init($filename); 
