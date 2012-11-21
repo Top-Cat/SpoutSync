@@ -3,6 +3,7 @@
 include "objects/artifact.php";
 include "objects/build.php";
 include "objects/project.php";
+include "objects/patch.php";
 $workingDir = "/media/raid/web/thomasc.co.uk/mirror/";
 $perms = 0770;
 
@@ -36,6 +37,14 @@ $projects = array("Spoutcraft", "Spout", "Vanilla", "SpoutPlugin", "SpoutAPI", "
 
 foreach ($projects as $project) {
 	new project($project);
+}
+
+$array = json_decode(get_text("http://get.spout.org/patches.php"));
+if (!file_exists($workingDir . "patch")) { mkdir($workingDir . "patch", $perms, true); }
+foreach ($array as $from => $val) {
+	foreach ($val as $to => $md5) {
+		new patch($from, $to, $md5);
+	}
 }
 
 ?>
