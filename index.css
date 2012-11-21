@@ -17,6 +17,56 @@ div {
 h1 {
 	background: url('http://cdn.spout.org/img/logo/spout_new.png') no-repeat;
 	padding-top: 120px;
+	margin-top: 0;
+}
+thead tr th, table {
+	border-bottom: 1px solid #FFF;
+}
+td {
+	padding: 3px 0 0;
+}
+th {
+	padding-bottom: 11px;
+}
+th.icon {
+	background-position: top left;
+}
+tbody tr:first-child td {
+	padding-top: 10px;
+}
+tbody tr:first-child td.icon {
+	background-position: left 7px;
+}
+table {
+	padding-bottom: 3px;
+	width: 100%;
+	font-family: monospace;
+}
+.icon {
+	background-image: url('http://cdn.spout.org/img/icon/unknown.gif');
+	background-repeat: no-repeat;
+	background-position: left 0px;
+	width: 16px;
+	height: 16px;
+	padding: 0px;
+}
+.icon-directory {
+	background-image: url('http://cdn.spout.org/img/icon/folder.png');
+}
+.icon-file-jar, .icon-file-zip, .icon-file-exe {
+	background-image: url('http://cdn.spout.org/img/icon/spout_16x16.png');
+}
+.icon-file-patch {
+	background-image: url('http://cdn.spout.org/img/icon/grass_16x16.png');
+}
+.icon-directory-parent {
+	background-image: url('http://cdn.spout.org/img/icon/folder.gif');
+}
+colgroup col:first-child {
+	width: 24px !important;
+}
+colgroup col:last-child {
+	width: auto !important;
 }
 hr {
 	border: 0px;
