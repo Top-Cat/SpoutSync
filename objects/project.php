@@ -54,7 +54,8 @@ class project {
 			if (isset($this->builds[$recommended])) {
 				$build = $this->builds[$recommended];
 			} else {
-				$build = new build($this, $recommended);
+				$buildInfo = json_decode(get_text('http://build.spout.org/job/' . $this->jenkinsName . '/' . $recommended . '/api/json?tree=timestamp,number,result,url,artifacts[relativePath,fileName]'));
+				$build = new build($this, $buildInfo);
 			}
 			$build->writeToFolder("recommended");
 			unset($this->folders["recommended"]);
