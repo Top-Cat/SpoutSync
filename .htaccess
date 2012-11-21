@@ -1,7 +1,7 @@
 Options +Indexes
 
 IndexOptions FancyIndexing FoldersFirst VersionSort SuppressDescription IconHeight=16 IconWidth=16 NameWidth=60 DescriptionWidth=30
-IndexIgnore /cgi-bin /cron /objects favicon.ico robots.txt *.css *.php *.yml *.html
+IndexIgnore /cgi-bin /cron /objects lastcommit favicon.ico robots.txt *.css *.php *.yml *.html
 IndexOrderDefault Descending Name
 IndexStyleSheet /index.css
 ReadmeName /footer.html
