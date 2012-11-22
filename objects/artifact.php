@@ -44,7 +44,7 @@ class artifact {
 	
 	private function sync() {
 		global $perms;
-		if (!file_exists($this->getDir()) || $this->getCachedMD5() != $this->getMD5() || $force) {
+		if (!file_exists($this->getDir()) || $this->getCachedMD5() != $this->getMD5() || $this->force) {
 			$data = get_text($this->build->getUrl() . "artifact/" . $this->relativePath);
 			$fh = fopen($this->getDir(), 'w');
 			fwrite($fh, $data);
