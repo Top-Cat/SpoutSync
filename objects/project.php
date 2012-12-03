@@ -46,7 +46,9 @@ class project {
 
 		// Remove folders that don't relate to builds
 		foreach ($this->folders as $folder => $v) {
-			recurse_delete($this->getDir() . $folder);
+			if (intval($folder) != $folder) {
+				recurse_delete($this->getDir() . $folder);
+			}
 		}
 	}
 }
