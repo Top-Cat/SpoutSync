@@ -44,23 +44,6 @@ class project {
 			unset($this->folders[$build->number]);
 		}
 
-		// Do latest and recommended folders
-		krsort($this->builds);
-		reset($this->builds)->writeToFolder("latest");
-		unset($this->folders["latest"]);
-
-		$recommended = get_text('http://build.spout.org/job/' . $this->jenkinsName . '/Stable/buildNumber');
-		if (is_numeric($recommended)) {
-			if (isset($this->builds[$recommended])) {
-				$build = $this->builds[$recommended];
-			} else {
-				$buildInfo = json_decode(get_text('http://build.spout.org/job/' . $this->jenkinsName . '/' . $recommended . '/api/json?tree=timestamp,number,result,url,artifacts[relativePath,fileName]'));
-				$build = new build($this, $buildInfo);
-			}
-			$build->writeToFolder("recommended");
-			unset($this->folders["recommended"]);
-		}
-
 		// Remove folders that don't relate to builds
 		foreach ($this->folders as $folder => $v) {
 			recurse_delete($this->getDir() . $folder);
