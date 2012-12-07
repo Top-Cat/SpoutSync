@@ -1,12 +1,13 @@
 Options +Indexes
 
 IndexOptions FancyIndexing FoldersFirst VersionSort SuppressDescription IconHeight=16 IconWidth=16 NameWidth=60 DescriptionWidth=30
-IndexIgnore /cgi-bin /cron /objects lastcommit favicon.ico robots.txt *.css *.php *.yml *.html
+IndexIgnore /cgi-bin /cron /objects lastcommit favicon.ico robots.txt *.css *.php *.yml *.html .ftpquota
 IndexOrderDefault Descending Name
 IndexStyleSheet /index.css
 ReadmeName /footer.html
 
 AddIcon http://cdn.spout.org/img/icon/folder.png ^^DIRECTORY^^
+DefaultIcon http://cdn.spout.org/img/icon/unknown.gif
 AddIcon http://cdn.spout.org/img/icon/unknown.gif ^^BLANKICON^^
 AddIcon http://cdn.spout.org/img/icon/spout_16x16.png .zip .jar .exe
 AddIcon http://cdn.spout.org/img/icon/grass_16x16.png .patch
