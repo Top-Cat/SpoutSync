@@ -25,11 +25,13 @@ class artifact {
 	}
 
 	public function saveMD5() {
+		global $perms;
 		$jdata = get_text($this->build->getUrl() . "artifact/" . $this->relativePath . '/*fingerprint*/');
 		if ($jdata != "e404") {
 			preg_match("/MD5: ([a-zA-Z0-9]{32})/", $jdata, $matches);
 			if (sizeof($matches) > 0) {
 				file_put_contents($this->getMD5File(), $matches[1]);
+				chmod($this->getMD5File(), $perms);
 			}
 		}
 	}
