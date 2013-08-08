@@ -6,13 +6,13 @@ IndexOrderDefault Descending Name
 IndexStyleSheet /index.css
 ReadmeName /footer.html
 
-AddIcon http://cdn.spout.org/img/icon/folder.png ^^DIRECTORY^^
-DefaultIcon http://cdn.spout.org/img/icon/unknown.gif
-AddIcon http://cdn.spout.org/img/icon/unknown.gif ^^BLANKICON^^
-AddIcon http://cdn.spout.org/img/icon/spout_16x16.png .zip .jar .exe
-AddIcon http://cdn.spout.org/img/icon/grass_16x16.png .patch
-AddIcon http://cdn.spout.org/img/icon/folder.gif ..
-AddIconByType http://cdn.spout.org/img/icon/image.gif image/*
+AddIcon https://cdn.spout.org/img/icon/folder.png ^^DIRECTORY^^
+DefaultIcon https://cdn.spout.org/img/icon/unknown.gif
+AddIcon https://cdn.spout.org/img/icon/unknown.gif ^^BLANKICON^^
+AddIcon https://cdn.spout.org/img/icon/spout_16x16.png .zip .jar .exe
+AddIcon https://cdn.spout.org/img/icon/grass_16x16.png .patch
+AddIcon https://cdn.spout.org/img/icon/folder.gif ..
+AddIconByType https://cdn.spout.org/img/icon/image.gif image/*
 
 SetEnv SERVER_ADMIN webmaster@spout.org
 ServerSignature Off
